@@ -1,19 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Counter = () => {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = useState(0);
 
-  const handleIncrement = () => {git 
-    setCount(count + 1);
-  };
-  const handleDecrement = () => {
-    setCount(count - 1);
-  };
   return (
     <React.Fragment>
       <p> The count is: {count} </p>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
     </React.Fragment>
   );
 };
