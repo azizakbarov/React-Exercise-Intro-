@@ -1,44 +1,34 @@
-import logo from "./logo.svg";
+import React from "react";
+import Expenses from "./Components/Expenses/Expenses";
 import "./App.css";
-import Documentation from "./Documentation";
-import Counter from "./Counter";
-import Employee from "./employee";
+
 
 function App() {
-  const employeeInfo = [
+  const expenses = [
     {
-      firstName: "Jakhongir",
-      lastName: "Dekhkanov",
-      age: 32,
-      employeeId: "1",
+      id: "e1",
+      title: "Toilet Paper",
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: "e3",
+      title: "Car Insurance",
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
     },
     {
-      firstName: "Aziz",
-      lastName: "Dekhkanov",
-      age: 28,
-      employeeId: "2",
-    },
-    {
-      firstName: "Otabek",
-      lastName: "Dekhkanov",
-      age: 23,
-      employeeId: "3",
-    },
-    {
-      firstName: "Mekhriniso ",
-      lastName: "Dekhkanov",
-      age: 21,
-      employeeId: "4",
+      id: "e4",
+      title: "New Desk (Wooden)",
+      amount: 450,
+      date: new Date(2021, 5, 12),
     },
   ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1> Company Directory</h1>
-        {employeeInfo.map((employee) => {
-          return <Employee key={employee.employeeId} {...employee} />;
-        })}
-      </header>
+    <div>
+      <h2> Lets get started</h2>
+      <Expenses items={expenses} />
     </div>
   );
 }
